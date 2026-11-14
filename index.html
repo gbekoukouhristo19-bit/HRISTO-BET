@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="HRISTO BET — prototype de jeux en crédits virtuels uniquement.">
+  <title>HRISTO BET — Démo</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="HRISTO BET accueil"><span class="brand-mark">H</span><span>HRISTO <b>BET</b></span></a>
+    <nav><a href="#games">Jeux</a><a href="#wallet">Portefeuille</a><a href="#about">À propos</a></nav>
+    <button class="button button-outline" id="installBtn" hidden>Installer</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PLATEFORME DE DÉMONSTRATION</p>
+        <h1>Le jeu commence<br><span>ici.</span></h1>
+        <p class="hero-text">Découvre l'expérience HRISTO BET avec des crédits virtuels, sans dépôt et sans retrait d'argent réel.</p>
+        <a class="button button-gold" href="#games">Découvrir les jeux <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-top"><span class="live-dot"></span> MODE DÉMO <span class="panel-label">VIRTUEL</span></div>
+        <div class="plane">✈</div>
+        <div class="multiplier" id="heroMultiplier">1.00<span>x</span></div>
+        <div class="chart-line"><i></i></div>
+        <p class="muted">Aucune valeur monétaire réelle</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><small>TON SOLDE DÉMO</small><strong id="balance">10 000</strong><small>crédits virtuels</small></div>
+      <div><small>PARTIES JOUÉES</small><strong id="rounds">0</strong><small>sur cet appareil</small></div>
+      <div><small>STATUT</small><strong class="status">DÉMO</strong><small>aucun argent réel</small></div>
+    </section>
+
+    <section id="games" class="section">
+      <div class="section-heading"><div><p class="eyebrow">CHOISIS TON EXPÉRIENCE</p><h2>Nos jeux</h2></div><span class="tag">CRÉDITS VIRTUELS</span></div>
+      <div class="game-grid">
+        <article class="game-card featured">
+          <div class="game-art crash-art"><span>✈</span><b>CRASH</b><small>Multiplier démo</small></div>
+          <div class="game-info"><div><h3>Crash</h3><p>Teste une manche avec des crédits fictifs.</p></div><button class="button button-gold" id="playCrash">Jouer</button></div>
+        </article>
+        <article class="game-card">
+          <div class="game-art sports-art"><span>⚽</span><b>SPORTS</b><small>Bientôt disponible</small></div>
+          <div class="game-info"><div><h3>Sports</h3><p>Module de démonstration en préparation.</p></div><button class="button button-disabled" disabled>Bientôt</button></div>
+        </article>
+        <article class="game-card">
+          <div class="game-art arcade-art"><span>◆</span><b>ARCADE</b><small>Bientôt disponible</small></div>
+          <div class="game-info"><div><h3>Arcade</h3><p>De nouveaux mini-jeux à découvrir.</p></div><button class="button button-disabled" disabled>Bientôt</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="play-section" id="playArea" hidden>
+      <div class="section-heading"><div><p class="eyebrow">JEU EN CRÉDITS FICTIFS</p><h2>Crash — Démonstration</h2></div><button class="button button-outline" id="closeGame">Fermer</button></div>
+      <div class="crash-console">
+        <div class="crash-screen"><div class="plane large">✈</div><div class="crash-number" id="crashNumber">1.00x</div><p id="gameMessage">Choisis une mise virtuelle puis lance la partie.</p></div>
+        <div class="game-controls">
+          <label for="betAmount">Mise virtuelle</label>
+          <div class="bet-row"><input id="betAmount" type="number" min="10" max="1000" step="10" value="100"><span>crédits</span></div>
+          <button class="button button-gold full" id="startRound">Lancer la partie</button>
+          <button class="button button-outline full" id="cashOut" disabled>Encaisser les crédits démo</button>
+          <small>Simulation locale : les résultats sont aléatoires et n'ont aucune valeur financière.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="wallet" class="wallet-section">
+      <div><p class="eyebrow">PORTEFEUILLE</p><h2>Crédits de démonstration</h2><p class="muted">Ton solde est enregistré uniquement dans le navigateur de cet appareil.</p></div>
+      <div class="wallet-card"><div><small>SOLDE DISPONIBLE</small><strong id="walletBalance">10 000</strong><small>crédits virtuels</small></div><button class="button button-outline" id="resetBalance">Réinitialiser la démo</button></div>
+    </section>
+
+    <section id="about" class="notice">
+      <strong>Important — prototype uniquement</strong>
+      <p>HRISTO BET est actuellement une démonstration avec crédits fictifs. Aucun dépôt, retrait, pari en argent réel ou paiement Binance n'est activé. Toute exploitation commerciale de jeux d'argent nécessiterait une analyse juridique, les licences applicables et l'accord écrit des prestataires concernés.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">H</span><span>HRISTO <b>BET</b></span></a><span>© <span id="year"></span> HRISTO BET — Prototype démo</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
